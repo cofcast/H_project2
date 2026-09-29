@@ -2,7 +2,7 @@
 // duration: 단계 소요 시간(초), water: 해당 단계의 누적 물양(g)
 const MOCK_COFFEES = [
   {
-    id: 'moonstone', name: '문스톤', image: 'images/coffee/moonstone.svg', published: true,
+    id: 'moonstone', name: '문스톤', image: 'images/coffee/moonstonecard.svg', published: true,
     hot: {
       dose: 20, temperature: 93, water: 300, c40: '24 클릭', ek43: '8.5',
       steps: [

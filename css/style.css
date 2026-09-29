@@ -160,3 +160,10 @@ textarea { min-height: 88px; resize: vertical; }
   .timer-heading h1 { font-size: 23px; }
 }
 @media (prefers-reduced-motion: no-preference) { a, button { transition: background-color .15s, border-color .15s; } }
+
+/* 레시피 아래에 표시하는 타이머 */
+.embedded-timer { max-width: 554px; margin: 56px auto 0; padding-top: 32px; border-top: 1px solid var(--line); scroll-margin-top: 24px; }
+.timer-heading h2 { font-size: 26px; margin: 0; }
+@media (max-width: 680px) {
+  .embedded-timer { margin-top: 36px; padding-top: 28px; }
+}
