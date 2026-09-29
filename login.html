@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="커피파인더 이메일 로그인 및 회원가입">
+  <title>로그인 · COFFEEFINDER</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
+  <script src="js/supabase-client.js" defer></script>
+  <script src="js/auth.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">본문으로 바로가기</a>
+  <header class="site-header"><a class="brand" href="index.html">COFFEEFINDER</a><span class="header-label">BREW GUIDE</span></header>
+  <main id="main" class="auth-main">
+    <a class="back" href="index.html">← 브루잉 가이드</a>
+    <section class="auth-card" aria-labelledby="auth-title">
+      <p class="eyebrow">COFFEEFINDER ACCOUNT</p>
+      <h1 id="auth-title">로그인</h1>
+      <p id="auth-description" class="muted">이메일과 비밀번호로 로그인하세요.</p>
+      <div class="tabs" aria-label="로그인 또는 회원가입 선택">
+        <button type="button" data-auth-mode="login" aria-pressed="true">로그인</button>
+        <button type="button" data-auth-mode="signup" aria-pressed="false">회원가입</button>
+      </div>
+      <form id="auth-form" novalidate>
+        <fieldset id="auth-fields" disabled>
+          <legend class="sr-only">이메일과 비밀번호</legend>
+          <label for="auth-email">이메일</label>
+          <input id="auth-email" name="email" type="email" autocomplete="email" inputmode="email" required placeholder="you@example.com">
+          <label for="auth-password">비밀번호</label>
+          <input id="auth-password" name="password" type="password" autocomplete="current-password" required aria-describedby="password-help">
+          <p id="password-help" class="auth-help muted">가입할 때 사용한 비밀번호를 입력하세요.</p>
+          <button id="auth-submit" class="primary full" type="submit">로그인</button>
+        </fieldset>
+      </form>
+      <p id="auth-status" class="form-status" role="status" aria-live="polite" aria-atomic="true">로그인 상태를 확인하고 있습니다.</p>
+    </section>
+  </main>
+  <noscript><p class="notice">로그인과 회원가입을 이용하려면 브라우저에서 JavaScript를 켜 주세요.</p></noscript>
+  <footer>COFFEEFINDER BREW GUIDE · 샘플 레시피</footer>
+</body>
+</html>

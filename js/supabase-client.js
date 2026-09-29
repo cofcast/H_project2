@@ -13,11 +13,11 @@
 
   try {
     window.supabaseClient = window.supabase.createClient(projectUrl, publishableKey, {
-      // 로그인 도입 전에는 세션 저장, 토큰 갱신, 인증 콜백 처리를 비활성화합니다.
+      // 페이지 이동 후에도 세션을 복원하고 이메일 확인 링크를 처리합니다.
       auth: {
-        persistSession: false,
-        autoRefreshToken: false,
-        detectSessionInUrl: false
+        persistSession: true,
+        autoRefreshToken: true,
+        detectSessionInUrl: true
       }
     });
   } catch (error) {
