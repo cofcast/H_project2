@@ -1,6 +1,6 @@
 # COFFEEFINDER BREW GUIDE
 
-HTML, CSS, JavaScript만으로 만든 첫 번째 버전입니다. 설치·빌드·외부 API·DB·로그인이 필요하지 않습니다.
+HTML, CSS, JavaScript만으로 만든 첫 번째 버전입니다. 설치·빌드 없이 실행하며, Supabase 클라이언트를 CDN으로 초기화합니다. 기존 화면은 샘플 데이터와 브라우저 임시 저장을 사용합니다.
 
 ## 실행
 
@@ -16,7 +16,18 @@ HTML, CSS, JavaScript만으로 만든 첫 번째 버전입니다. 설치·빌드
 - `css/style.css`: 공통 화면 스타일과 모바일 대응
 - `images/coffee/`: SVG 플레이스홀더. 실제 원두카드로 교체할 때 이 폴더에 파일을 넣고 이미지 경로를 수정합니다.
 - `js/common.js`: 데이터 읽기·임시 저장·검증. 나중에 DB로 교체할 지점입니다.
+- `js/supabase-client.js`: Supabase 프로젝트 URL, Publishable Key 및 클라이언트 초기화
 - `js/home.js`, `js/recipe.js`, `js/timer.js`, `js/admin.js`: 각 화면의 동작
+
+## Supabase 연결
+
+모든 HTML에서 `https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2`를 로드한 다음 `js/supabase-client.js`를 실행합니다. 두 스크립트 모두 `defer`를 사용해 실행 순서를 유지합니다. [Supabase 공식 CDN 설치 안내](https://supabase.com/docs/reference/javascript/installing)를 따릅니다.
+
+CDN 전역 `window.supabase`는 SDK로 유지하고, 생성한 클라이언트는 `window.supabaseClient`로 접근합니다. 브라우저 개발자 도구에서 `window.supabaseClient`로 초기화 여부를 확인할 수 있습니다. 클라이언트 생성만으로 서버 통신이나 테이블 접근 성공을 확인하는 것은 아닙니다.
+
+제공된 Publishable Key만 사용하며 Secret Key는 사용하지 않습니다. 로그인은 구현하지 않았고 세션 저장, 자동 토큰 갱신, URL 인증 콜백 감지는 비활성화했습니다. 데이터 조회·저장은 아직 Supabase로 전환하지 않았으므로 기존 Mock Data와 localStorage가 유지됩니다.
+
+CDN 로드에는 인터넷 연결이 필요합니다. SDK 로드 또는 초기화에 실패하면 `window.supabaseClient`는 `null`이며 콘솔에 경고를 표시하고 기존 로컬 기능은 계속 동작합니다.
 
 ## 레시피와 타이머
 
