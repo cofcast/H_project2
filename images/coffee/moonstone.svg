@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 440" role="img" aria-label="MOONSTONE placeholder">
+<rect width="640" height="440" fill="#eeeee9"/><rect x="28" y="28" width="584" height="384" rx="2" fill="#f8f8f5" stroke="#d5d5cf"/>
+<text x="60" y="76" font-family="Arial,sans-serif" font-size="12" letter-spacing="2" fill="#666">COFFEEFINDER</text><text x="580" y="76" text-anchor="end" font-family="Arial,sans-serif" font-size="12" fill="#666">01</text>
+<g fill="none" stroke="#999990" stroke-width="2"><ellipse cx="320" cy="192" rx="24" ry="34" transform="rotate(30 320 192)"/><path d="M335 165 C310 183 331 199 304 219"/></g>
+<text x="320" y="298" text-anchor="middle" font-family="Arial,sans-serif" font-size="30" letter-spacing="4" fill="#333">MOONSTONE</text>
+<path d="M270 327 H370" stroke="#c6c6bf"/><text x="320" y="365" text-anchor="middle" font-family="Arial,sans-serif" font-size="11" letter-spacing="2" fill="#777">SAMPLE COFFEE CARD</text></svg>
